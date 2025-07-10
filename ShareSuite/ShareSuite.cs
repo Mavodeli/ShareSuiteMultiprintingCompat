@@ -16,7 +16,6 @@ namespace ShareSuite
 {
     [BepInDependency("com.bepis.r2api")]
     [BepInPlugin("com.funkfrog_sipondo.sharesuite", "ShareSuite", "2.9.0")]
-    //[R2APISubmoduleDependency("CommandHelper")]
     [NetworkCompatibility(CompatibilityLevel.NoNeedForSync, VersionStrictness.DifferentModVersionsAreOk)]
     public class ShareSuite : BaseUnityPlugin
     {
@@ -366,7 +365,7 @@ namespace ShareSuite
             NetworkMessageType = Config.Bind(
                 "Settings",
                 "NetworkMessageType",
-                (short)1021,
+                (short) 1021,
                 "The identifier for network message for this mod. Must be unique across all mods."
             );
         }
@@ -960,49 +959,49 @@ namespace ShareSuite
             }
         }
 
-//TODO re-introduce these as add/remove commands
-//        // ItemBlacklist
-//        [ConCommand(commandName = "ss_ItemBlacklist", flags = ConVarFlags.None,
-//            helpText = "Items (by index) that you do not want to share, comma separated.")]
-//        private static void CcItemBlacklist(ConCommandArgs args)
-//        {
-//            if (args.Count == 0)
-//            {
-//                Debug.Log(ItemBlacklist.Value);
-//                return;
-//            }
-//
-//            var list = string.Join(",",
-//                from i in Enumerable.Range(0, args.Count)
-//                select args.TryGetArgInt(i) into num
-//                where num != null
-//                select num.Value);
-//            ItemBlacklist.Value = list;
-//        }
-//
-//        // ItemBlacklist
-//        [ConCommand(commandName = "ss_EquipmentBlacklist", flags = ConVarFlags.None,
-//            helpText = "Equipment (by index) that you do not want to share, comma separated.")]
-//        private static void CcEquipmentBlacklist(ConCommandArgs args)
-//        {
-//            if (args.Count == 0)
-//            {
-//                Debug.Log(EquipmentBlacklist.Value);
-//                return;
-//            }
-//
-//            var list = string.Join(",",
-//                from i in Enumerable.Range(0, args.Count)
-//                select args.TryGetArgInt(i) into num
-//                where num != null
-//                select num.Value);
-//            ItemBlacklist.Value = list;
-//        }
+        //TODO re-introduce these as add/remove commands
+        //        // ItemBlacklist
+        //        [ConCommand(commandName = "ss_ItemBlacklist", flags = ConVarFlags.None,
+        //            helpText = "Items (by index) that you do not want to share, comma separated.")]
+        //        private static void CcItemBlacklist(ConCommandArgs args)
+        //        {
+        //            if (args.Count == 0)
+        //            {
+        //                Debug.Log(ItemBlacklist.Value);
+        //                return;
+        //            }
+        //
+        //            var list = string.Join(",",
+        //                from i in Enumerable.Range(0, args.Count)
+        //                select args.TryGetArgInt(i) into num
+        //                where num != null
+        //                select num.Value);
+        //            ItemBlacklist.Value = list;
+        //        }
+        //
+        //        // ItemBlacklist
+        //        [ConCommand(commandName = "ss_EquipmentBlacklist", flags = ConVarFlags.None,
+        //            helpText = "Equipment (by index) that you do not want to share, comma separated.")]
+        //        private static void CcEquipmentBlacklist(ConCommandArgs args)
+        //        {
+        //            if (args.Count == 0)
+        //            {
+        //                Debug.Log(EquipmentBlacklist.Value);
+        //                return;
+        //            }
+        //
+        //            var list = string.Join(",",
+        //                from i in Enumerable.Range(0, args.Count)
+        //                select args.TryGetArgInt(i) into num
+        //                where num != null
+        //                select num.Value);
+        //            ItemBlacklist.Value = list;
+        //        }
 
         private static bool? TryGetBool(string arg)
         {
-            string[] posStr = {"yes", "true", "1"};
-            string[] negStr = {"no", "false", "0", "-1"};
+            string[] posStr = { "yes", "true", "1" };
+            string[] negStr = { "no", "false", "0", "-1" };
 
             if (posStr.Contains(arg.ToLower())) return true;
             if (negStr.Contains(arg.ToLower())) return false;

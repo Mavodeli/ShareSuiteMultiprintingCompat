@@ -7,3 +7,4 @@ buildreleases
 .idea
 Deps
 *DotSettings.user
+.config

@@ -2,9 +2,11 @@
     "name": "ShareSuiteMultiprintingCompat",
     "version_number": "1.16.0",
     "website_url": "https://github.com/Mavodeli/ShareSuiteMultiprintingCompat",
-    "description": "Share gear between members of your party - Highly Balanced - Completely Customisable - Compatible with Risk of Multiprinting",
+    "description": "ShareSuit compatibility patch for Risk of Multiprinting",
     "dependencies": [
+        "bbepis-BepInExPack-5.4.2120",
         "RiskofThunder-R2API_Core-5.1.6",
-        "RiskofThunder-R2API_CommandHelper-1.0.2"
+        "RiskofThunder-R2API_CommandHelper-1.0.2",
+        "mavo-Risk_of_Multiprinting-1.0.0"
     ]
 }

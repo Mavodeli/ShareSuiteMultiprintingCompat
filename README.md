@@ -1,3 +1,6 @@
+# Important - this is a patch
+This is a compatibility patch of ShareSuite for my mod [Risk of Multiprinting](https://github.com/Mavodeli/risk_of_multiprinting). Please refer to [the main repository](https://github.com/FunkFrog/ShareSuite) for anything that doesn't relate to this patch. 
+
 [//]: # ( Header imgur album: https://imgur.com/a/2uaeCao )
 ![Header Image](https://i.imgur.com/4HTi92E.png "ShareSuite Header Image")
 

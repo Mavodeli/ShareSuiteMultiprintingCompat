@@ -11,4 +11,7 @@
       <PackageReference Include="R2API.Core" Version="5.1.6" />
     </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="call ../zipper.bat" />
+  </Target>
 </Project>

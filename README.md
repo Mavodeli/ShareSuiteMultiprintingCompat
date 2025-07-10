@@ -112,7 +112,7 @@ ShareSuite is a mod with a multitude of systems designed around sharing the thin
 | Void Item Randomizing            |         False |                                N/A |
 | Dupe Fix                         |          True |              ss_PrinterCauldronFix |
 | Sacrifice Fix                    |          True |             ss_SacrificeFixEnabled |
-| Dead Players Get Items           |         False |             ss_DeadPlayersGetItems |
+| Dead Players Get Items           |          True |             ss_DeadPlayersGetItems |
 | Override Player Scaling          |          True |           ss_OverridePlayerScaling |
 | Experimental Mode                |         False |                ss_ExperimentalMode |
 | Interactables Credit             |           1.0 |             ss_InteractablesCredit |

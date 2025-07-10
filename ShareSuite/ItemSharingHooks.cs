@@ -309,7 +309,7 @@ namespace ShareSuite
                     if (item == null) MonoBehaviour.print("ShareSuite: PickupCatalog is null.");
                     else
                     {
-                        HandleGiveItem(characterBody.master, PickupCatalog.GetPickupDef(shop.CurrentPickupIndex()));
+                        HandleGiveItem(characterBody.master, PickupCatalog.GetPickupDef(shop.CurrentPickupIndex()), self.cost);
                     }
 
                     orig(self, activator);
@@ -454,14 +454,14 @@ namespace ShareSuite
 
         public static bool IsValidPickupObject(GenericPickupController pickup, CharacterBody picker)
         {
-            if(AdditionalPickupValidityChecks == null)
+            if (AdditionalPickupValidityChecks == null)
                 return true;
             var retv = true;
-            foreach(Func<GenericPickupController, CharacterBody, bool> f in AdditionalPickupValidityChecks.GetInvocationList())
+            foreach (Func<GenericPickupController, CharacterBody, bool> f in AdditionalPickupValidityChecks.GetInvocationList())
                 retv &= f(pickup, picker);
             return retv;
         }
-        
+
         private static PickupIndex? GetRandomItemOfTier(ItemTier tier, PickupIndex orDefault)
         {
             switch (tier)
@@ -525,15 +525,21 @@ namespace ShareSuite
                 ? collection[Random.Range(0, collection.Count)]
                 : (T?) null;
 
-        private static void HandleGiveItem(CharacterMaster characterMaster, PickupDef pickupDef)
+        private static void HandleGiveItem(CharacterMaster characterMaster, PickupDef pickupDef, int amount = 1)
         {
-            characterMaster.inventory.GiveItem(pickupDef.itemIndex);
+            for (int i = 0; i < amount; i++)
+            {
+                characterMaster.inventory.GiveItem(pickupDef.itemIndex);
+            }
 
             var connectionId = characterMaster.playerCharacterMasterController.networkUser?.connectionToClient?.connectionId;
 
             if (connectionId != null)
             {
-                NetworkHandler.SendItemPickupMessage(connectionId.Value, pickupDef.pickupIndex);
+                for (int i = 0; i < amount; i++)
+                {
+                    NetworkHandler.SendItemPickupMessage(connectionId.Value, pickupDef.pickupIndex);
+                }
             }
         }
 

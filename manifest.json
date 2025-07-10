@@ -1,9 +1,10 @@
 {
-    "name": "ShareSuite",
-    "version_number": "1.15.1",
-    "website_url": "https://github.com/FunkFrog/RoR2SharedItems",
-    "description": "Share gear between members of your party - Highly Balanced - Completely Customisable",
+    "name": "ShareSuiteMultiprintingCompat",
+    "version_number": "1.16.0",
+    "website_url": "https://github.com/Mavodeli/ShareSuiteMultiprintingCompat",
+    "description": "Share gear between members of your party - Highly Balanced - Completely Customisable - Compatible with Risk of Multiprinting",
     "dependencies": [
-        "RiskofThunder-R2API_Core-5.1.6"
+        "RiskofThunder-R2API_Core-5.1.6",
+        "RiskofThunder-R2API_CommandHelper-1.0.2"
     ]
 }

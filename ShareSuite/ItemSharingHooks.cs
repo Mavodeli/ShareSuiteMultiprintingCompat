@@ -309,7 +309,16 @@ namespace ShareSuite
                     if (item == null) MonoBehaviour.print("ShareSuite: PickupCatalog is null.");
                     else
                     {
-                        HandleGiveItem(characterBody.master, PickupCatalog.GetPickupDef(shop.CurrentPickupIndex()), self.cost);
+                        if (shop.gameObject.name.Contains("Duplicator"))
+                        {
+                            // 3D printers multiprint based on cost
+                            HandleGiveItem(characterBody.master, PickupCatalog.GetPickupDef(shop.CurrentPickupIndex()), self.cost);
+                        }
+                        else
+                        {
+                            // Cauldrons only give 1 item
+                            HandleGiveItem(characterBody.master, PickupCatalog.GetPickupDef(shop.CurrentPickupIndex()));
+                        }
                     }
 
                     orig(self, activator);
@@ -536,10 +545,8 @@ namespace ShareSuite
 
             if (connectionId != null)
             {
-                for (int i = 0; i < amount; i++)
-                {
-                    NetworkHandler.SendItemPickupMessage(connectionId.Value, pickupDef.pickupIndex);
-                }
+                // announcing the current amount will suffice
+                NetworkHandler.SendItemPickupMessage(connectionId.Value, pickupDef.pickupIndex);
             }
         }
 

@@ -1,4 +1,6 @@
 ## Changelog
+- **1.16.1**
+    - Fix cauldron drop amount
 - **1.16.0**
     - Initial fork release, stepped up the original (1.15.1)
 

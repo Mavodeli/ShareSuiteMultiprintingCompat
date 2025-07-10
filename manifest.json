@@ -1,6 +1,6 @@
 {
     "name": "ShareSuiteMultiprintingCompat",
-    "version_number": "1.16.0",
+    "version_number": "1.16.1",
     "website_url": "https://github.com/Mavodeli/ShareSuiteMultiprintingCompat",
     "description": "ShareSuit compatibility patch for Risk of Multiprinting",
     "dependencies": [

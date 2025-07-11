@@ -99,7 +99,7 @@ ShareSuite is a mod with a multitude of systems designed around sharing the thin
 | Setting                          | Default Value |                            Command |
 | :--------------------------------| :-----------: | ---------------------------------: |
 | Mod Enabled                      |          True |                         ss_Enabled |
-| Money is Shared                  |          True |                   ss_MoneyIsShared |
+| Money is Shared                  |         False |                   ss_MoneyIsShared |
 | White Items are Shared           |          True |                ss_WhiteItemsShared |
 | Green Items are Shared           |          True |                ss_GreenItemsShared |
 | Red Items are Shared             |          True |                  ss_RedItemsShared |
@@ -114,16 +114,16 @@ ShareSuite is a mod with a multitude of systems designed around sharing the thin
 | Boss Item Randomizing            |         False |                                N/A |
 | Void Item Randomizing            |         False |                                N/A |
 | Dupe Fix                         |          True |              ss_PrinterCauldronFix |
-| Sacrifice Fix                    |          True |             ss_SacrificeFixEnabled |
+| Sacrifice Fix                    |         False |             ss_SacrificeFixEnabled |
 | Dead Players Get Items           |          True |             ss_DeadPlayersGetItems |
 | Override Player Scaling          |          True |           ss_OverridePlayerScaling |
 | Experimental Mode                |         False |                ss_ExperimentalMode |
 | Interactables Credit             |           1.0 |             ss_InteractablesCredit |
 | Interactables Offset             |           0.0 |             ss_InteractablesOffset |
 | Override Boss Loot Scaling       |          True |         ss_OverrideBossLootScaling |
-| Override Simulacrum Loot Scaling |          True |          ss_OverrideSimulacrumLoot |
+| Override Simulacrum Loot Scaling |         False |          ss_OverrideSimulacrumLoot |
 | Boss Loot Credit                 |             1 |                  ss_BossLootCredit |
-| Override Void Field Scaling      |          True |           ss_OverrideVoidFieldLoot |
+| Override Void Field Scaling      |         False |           ss_OverrideVoidFieldLoot |
 | Void Field Loot Credit           |             1 |             ss_VoidFieldLootCredit |
 | Simulacrum Loot Credit           |             1 |            ss_SimulacrumLootCredit |
 | Money Scalar Enabled             |         False |              ss_MoneyScalarEnabled |

@@ -1,4 +1,6 @@
 ## Changelog
+- **1.16.2**
+    - Changed default values, most notably disabling moneysharing to prevent an infinite XP loop with Longstanding Solitude
 - **1.16.1**
     - Fix cauldron drop amount
 - **1.16.0**

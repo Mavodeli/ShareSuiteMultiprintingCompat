@@ -15,14 +15,14 @@ using UnityEngine.Networking;
 namespace ShareSuite
 {
     [BepInDependency("com.bepis.r2api")]
-    [BepInPlugin("com.funkfrog_sipondo.sharesuite", "ShareSuite", "2.9.0")]
+    [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
     [NetworkCompatibility(CompatibilityLevel.NoNeedForSync, VersionStrictness.DifferentModVersionsAreOk)]
     public class ShareSuite : BaseUnityPlugin
     {
         #region ConfigWrapper init
 
         // Update this when we want to send a new message
-        public static string MessageSendVer = "2.9";
+        public static string MessageSendVer = MyPluginInfo.PLUGIN_VERSION;
 
         public static ConfigEntry<bool>
             ModIsEnabled,
@@ -133,7 +133,7 @@ namespace ShareSuite
             MoneyIsShared = Config.Bind(
                 "Settings",
                 "MoneyShared",
-                true,
+                false,
                 "Toggles money sharing between teammates. Every player gains money together and spends it " +
                 "from one central pool of money."
             );
@@ -214,7 +214,7 @@ namespace ShareSuite
             LunarItemsRandomized = Config.Bind(
                 "Balance",
                 "LunarItemsRandomized",
-                true,
+                false,
                 "Toggles randomizing Lunar items in RandomizeSharedPickups mode."
             );
 
@@ -285,14 +285,14 @@ namespace ShareSuite
             OverrideVoidFieldLootScalingEnabled = Config.Bind(
                 "Balance",
                 "OverrideVoidLootScaling",
-                true,
+                false,
                 "Toggles override of the scalar of Void Field loot drops to your configured balance."
             );
 
             OverrideSimulacrumLootScalingEnabled = Config.Bind(
                 "Balance",
                 "OverrideSimulacrumLootScaling",
-                true,
+                false,
                 "Toggles override of the scalar of Simulacrum loot drops to your configured balance."
             );
 
@@ -327,7 +327,7 @@ namespace ShareSuite
             SacrificeFixEnabled = Config.Bind(
                 "Balance",
                 "SacrificeFixEnabled",
-                true,
+                false,
                 "Toggles the reduction in sacrifice loot drops to be balanced with shared items enabled."
             );
 

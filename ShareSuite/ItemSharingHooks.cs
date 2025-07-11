@@ -536,10 +536,7 @@ namespace ShareSuite
 
         private static void HandleGiveItem(CharacterMaster characterMaster, PickupDef pickupDef, int amount = 1)
         {
-            for (int i = 0; i < amount; i++)
-            {
-                characterMaster.inventory.GiveItem(pickupDef.itemIndex);
-            }
+            characterMaster.inventory.GiveItem(pickupDef.itemIndex, amount);
 
             var connectionId = characterMaster.playerCharacterMasterController.networkUser?.connectionToClient?.connectionId;
 

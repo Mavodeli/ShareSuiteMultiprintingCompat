@@ -314,7 +314,9 @@ namespace ShareSuite
                     else
                     {
                         Log.Debug("Sharesuite: handling give item");
-                        HandleGiveItem(characterBody.master, PickupCatalog.GetPickupDef(shop.CurrentPickupIndex()));
+                        // 3D printers (duplicators) return as many items as the player put in (for multiprinting compatibility)
+                        int amount = shop.gameObject.name.Contains("Duplicator") ? self.cost : 1;
+                        HandleGiveItem(characterBody.master, PickupCatalog.GetPickupDef(shop.CurrentPickupIndex()), amount);
                     }
 
                     Log.Debug("Sharesuite: orig");
@@ -521,9 +523,9 @@ namespace ShareSuite
                 ? collection[Random.Range(0, collection.Count)]
                 : (T?) null;
 
-        private static void HandleGiveItem(CharacterMaster characterMaster, PickupDef pickupDef)
+        private static void HandleGiveItem(CharacterMaster characterMaster, PickupDef pickupDef, int amount = 1)
         {
-            characterMaster.inventory.GiveItem(pickupDef.itemIndex);
+            characterMaster.inventory.GiveItem(pickupDef.itemIndex, amount);
 
             var connectionId = characterMaster.playerCharacterMasterController.networkUser?.connectionToClient
                 ?.connectionId;

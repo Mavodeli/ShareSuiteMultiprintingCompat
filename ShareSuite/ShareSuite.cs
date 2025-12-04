@@ -136,7 +136,7 @@ namespace ShareSuite
             MoneyIsShared = Config.Bind(
                 "Settings",
                 "MoneyShared",
-                true,
+                false,
                 "Toggles money sharing between teammates. Every player gains money together and spends it " +
                 "from one central pool of money."
             );
@@ -246,7 +246,7 @@ namespace ShareSuite
             DeadPlayersGetItems = Config.Bind(
                 "Balance",
                 "DeadPlayersGetItems",
-                false,
+                true,
                 "Toggles whether or not dead players should get copies of picked up items."
             );
 
